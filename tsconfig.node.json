@@ -3,6 +3,8 @@
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "target": "ES2022",
     "lib": ["ES2023"],
+    "baseUrl": ".",
+    "paths": { "@/*": ["./src/*"] },
     "module": "ESNext",
     "skipLibCheck": true,
 
@@ -18,7 +20,10 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    /* ✅ Add this line to fix your issue */
+    "types": ["node"]
   },
   "include": ["vite.config.ts"]
 }

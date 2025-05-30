@@ -1,15 +1,18 @@
-import './App.css';
+import React from "react";
+import { Button } from "@/components/ui/button";  // Import from the alias path
 
 function App() {
   return (
-    <>
-      <div className="flex justify-center items-center h-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-        <div className="bg-white p-8 rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Tailwind Test Card</h2>
-          <p className="text-gray-600">This is a simple card to test Tailwind CSS styling and hover effects.</p>
-        </div>
-      </div>
-    </>
+    <div className="flex flex-col justify-center items-center h-screen bg-gray-900 gap-4">
+      <h1 className="text-6xl text-white font-bold">Hello, Tailwind CSS!</h1>
+      <Button variant="default">Default Button</Button>
+      <Button variant="destructive" size="lg">Destructive Large</Button>
+      <Button variant="outline" size="sm">Outline Small</Button>
+      <Button variant="ghost" size="icon" aria-label="Settings">
+        {/* You can put an icon here if you want */}
+        ⚙️
+      </Button>
+    </div>
   );
 }
 
