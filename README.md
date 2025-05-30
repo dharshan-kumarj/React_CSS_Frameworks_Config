@@ -1,54 +1,134 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#  React + Tailwind CSS + Vite + TypeScript Template
 
-Currently, two official plugins are available:
+This branch provides a **React** starter template configured with **Tailwind CSS**, **Vite**, and **TypeScript**. Ideal for modern frontend development with fast builds and utility-first styling.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📁 Folder Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+``` 
+├── public/  
+├── src/  
+├── .gitignore  
+├── README.md  
+├── eslint.config.js  
+├── index.html  
+├── package-lock.json  
+├── package.json  
+├── postcss.config.cjs  
+├── tailwind.config.js  
+├── tsconfig.json  
+├── tsconfig.app.json  
+├── tsconfig.node.json  
+└── vite.config.ts
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
+
+## 🧰 Tech Stack
+
+- ⚛️ React
+- ⚡ Vite
+- 🎨 Tailwind CSS v3
+- 🟦 TypeScript
+
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository & Checkout the Tailwind Branch
+
+```bash
+https://github.com/dharshan-kumarj/React_CSS_Frameworks_Config/tree/Tailwind
+cd React_CSS_Frameworks_Config
+git checkout Tailwind
+
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+
+```
+
+### 3. Start the Dev Server
+
+```bash
+npm run dev
+
+```
+
+----------
+
+## 🧩 Tailwind CSS Configuration
+
+###  `tailwind.config.js`
 
 ```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
 
-export default tseslint.config({
+```
+### `postcss.config.cjs`
+
+```js
+module.exports = {
   plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
+    tailwindcss: {},
+    autoprefixer: {},
   },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+}
+
+```
+
+###  `src/index.css`
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+```
+
+----------
+
+## 🧪 Verifying Tailwind CSS
+
+To check if Tailwind is working:
+
+1.  Go to `src/App.tsx`
+    
+2.  Add a class like `bg-blue-600 text-white p-4 rounded`
+    
+3.  Run the app and see the changes
+    
+
+----------
+
+## 🏗️ Build for Production
+
+```bash
+npm run build
+
+```
+
+Then preview using:
+
+```bash
+npm run preview
+
 ```
