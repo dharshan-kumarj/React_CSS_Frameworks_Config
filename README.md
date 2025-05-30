@@ -1,54 +1,170 @@
-# React + TypeScript + Vite
+# React + Tailwind CSS + ShadCN UI + Vite + TypeScript Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This branch features a fully configured **React** setup using **ShadCN UI**, **Tailwind CSS**, **Vite**, and **TypeScript** — ideal for scalable, modern UI development using utility-first styling and accessible components.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📁 Folder Structure
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```
+.  
+├── public/  
+├── src/  
+├── .gitignore  
+├── README.md  
+├── components.json  
+├── eslint.config.js  
+├── index.html  
+├── package-lock.json  
+├── package.json  
+├── postcss.config.cjs  
+├── tailwind.config.js  
+├── tsconfig.json  
+├── tsconfig.app.json  
+├── tsconfig.node.json  
+└── vite.config.ts
+
+```
+
+---
+
+## 🧰 Tech Stack
+
+- ⚛️ React
+- ⚡ Vite
+- 🟦 TypeScript
+- 🎨 Tailwind CSS
+- 🧩 ShadCN UI (`@shadcn/ui`)
+- 🌐 Radix UI (used under the hood by ShadCN)
+
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository & Checkout the ShadCN Branch
+
+```bash
+git clone https://github.com/dharshan-kumarj/React_CSS_Frameworks_Config/tree/Shadcn
+cd React_CSS_Frameworks_Config
+git checkout Shadcn
+
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+
+```
+
+### 3. Start the Development Server
+
+```bash
+npm run dev
+
+```
+
+----------
+
+## 🎨 ShadCN UI Setup
+
+ShadCN components are auto-generated and configured using the `components.json` file.
+
+### ShadCN Component Generator
+
+To add a new component (e.g., Button):
+
+```bash
+npx shadcn-ui@latest add button
+
+```
+
+You can also configure default settings in `components.json`.
+
+###  Example Usage
+
+In `src/App.tsx`:
+
+```tsx
+import { Button } from "@/components/ui/button";
+
+function App() {
+  return (
+    <div className="p-4">
+      <Button variant="default">Click Me</Button>
+    </div>
+  );
+}
+
+```
+
+----------
+
+## 🧩 Tailwind CSS Configuration
+
+### `tailwind.config.js`
 
 ```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{ts,tsx}"
   ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ["Inter", ...fontFamily.sans],
+      },
     },
   },
-})
+  plugins: [require("tailwindcss-animate")],
+}
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### `postcss.config.cjs`
 
 ```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
+module.exports = {
   plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
+    tailwindcss: {},
+    autoprefixer: {},
   },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+}
+
 ```
+
+----------
+
+## 🏗️ Build for Production
+
+```bash
+npm run build
+
+```
+
+Preview the built app:
+
+```bash
+npm run preview
+
+```
+
+----------
+
+## 💡 Tips
+
+-   Customize ShadCN themes in `tailwind.config.js` and `components.json`
+    
+-   All components are stored in `src/components/ui`
+    
+-   You can extend with your own components using ShadCN CLI
+    
+
+----------
