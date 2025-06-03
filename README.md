@@ -46,8 +46,8 @@ This branch contains a **React** starter template using **Bootstrap 5**, built w
 ### 1. Clone the Repository & Checkout the Bootstrap Branch
 
 ```bash
-git clone https://github.com/dharshan-kumarj/React_CSS_Frameworks_Config/tree/Bootstrap
-cd React_CSS_Frameworks_Config
+git clone https://github.com/dharshan-kumarj/React_CSS_Frameworks_Starter/tree/Bootstrap
+cd React_CSS_Frameworks_Starter
 git checkout Bootstrap
 
 ```
