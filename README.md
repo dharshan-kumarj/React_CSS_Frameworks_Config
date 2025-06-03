@@ -46,8 +46,8 @@ This branch features a fully configured **React** setup using **ShadCN UI**, **T
 ### 1. Clone the Repository & Checkout the ShadCN Branch
 
 ```bash
-git clone https://github.com/dharshan-kumarj/React_CSS_Frameworks_Config/tree/Shadcn
-cd React_CSS_Frameworks_Config
+git clone https://github.com/dharshan-kumarj/React_CSS_Frameworks_Starter/tree/Shadcn
+cd React_CSS_Frameworks_Starter
 git checkout Shadcn
 
 ```
