@@ -43,8 +43,8 @@ This branch provides a **React** starter template configured with **Tailwind CSS
 ### 1. Clone the Repository & Checkout the Tailwind Branch
 
 ```bash
-https://github.com/dharshan-kumarj/React_CSS_Frameworks_Config/tree/Tailwind
-cd React_CSS_Frameworks_Config
+https://github.com/dharshan-kumarj/React_CSS_Frameworks_Starter/tree/Tailwind
+cd React_CSS_Frameworks_Starter
 git checkout Tailwind
 
 ```
